@@ -20,7 +20,7 @@ public class EmployeeController {
     }
 
     @GetMapping("/find")
-    public Employee find(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastname) {
+    public Employee find(@RequestParam("firstName1") String firstName, @RequestParam("lastName") String lastname) {
         return employeeService.findEmployee(firstName, lastname);
     }
 
