@@ -4,6 +4,8 @@ import hw25.Employee;
 import hw25.EmployeeService;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Collection;
+
 @RestController
 @RequestMapping("/employee")
 
@@ -28,7 +30,9 @@ public class EmployeeController {
     public Employee remove(@RequestParam("firstName") String firstName, @RequestParam("lastName") String lastName) {
         return employeeService.removeEmployee(firstName, lastName);
     }
-
-
+    @GetMapping("/getAll")
+    public Collection <Employee> getAllEmployees () {
+        return employeeService.getAllEmployees();
+    }
 }
 

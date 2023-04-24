@@ -6,6 +6,7 @@ import hw25.exceptions.EmployeeStorageIsFullException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collection;
 
 @Service
 
@@ -51,5 +52,9 @@ public class EmployeeServiceImpl implements EmployeeService {
         }
         throw new EmployeeNotFoundException("Сотрудник не найден");
 
+    }
+    @Override
+    public Collection<Employee> getAllEmployees () {
+        return employees;
     }
 }
